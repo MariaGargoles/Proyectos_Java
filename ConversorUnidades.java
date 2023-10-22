@@ -1,11 +1,19 @@
+
 import java.util.Scanner;
+
 public class ConversorUnidades {
     public static void main (String[] args){
         // Scanner input se usa para leer datos de entrada
         Scanner input = new Scanner (System.in);
-
+        boolean continuar = true;
+        
+        
+        while (continuar) {
+        
         System.out.println("Conversor unidades");
-        System.out.println("Cantidad a convertir en pies:  ");
+        System.out.println("Cantidad a convertir:  ");
+       
+        if (input.hasNextDouble()) {
         double Lpies = input.nextDouble ();
 
         //Double es la clase que usaremos para numeros decimales
@@ -16,15 +24,29 @@ public class ConversorUnidades {
         double LMetros = Lpies /3.28;
         double LYardas = Lpies / 3;
 
+        
         //Imprimir resultado
 
         System.out.println("Resultado: ");
         System.out.println("Distancia en pulgadas: " + LPulgadas + " pulg.");
         System.out.println("Distancia en metros: " + LMetros + " m.");
         System.out.println("Distancia en yardas: " + LYardas + " yd.");
-
-        input.close();
+        System.out.println("Para salir introducir Q");
+        
+        }else {
+        	String entradaString = input.next();
+        		
+        		if (entradaString.equalsIgnoreCase("q")) {
+        		continuar= false;
+        }else {
+        		System.out.println("Error");
+        	}
+        }
+        
+        
 
     }
+        input.close();
 
+}
 }
