@@ -11,7 +11,7 @@ public class ConversorUnidades {
         while (continuar) {
         
         System.out.println("Conversor unidades");
-        System.out.println("Cantidad a convertir:  ");
+        System.out.println("Cantidad a convertir(pies):  ");
        
         if (input.hasNextDouble()) {
         double Lpies = input.nextDouble ();
